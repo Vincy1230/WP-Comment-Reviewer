@@ -78,7 +78,7 @@ QJsonArray getComments(QString domain, QString user, QString password, MainWindo
     QNetworkRequest request;
     QNetworkReply* reply;
 
-    request.setUrl(QUrl("http://" + domain + "/wp-json/wp/v2/comments?status=hold&per_page=100"));
+    request.setUrl(QUrl("https://" + domain + "/wp-json/wp/v2/comments?status=hold&per_page=100"));
     request.setRawHeader("Authorization", "Basic " + QByteArray(QString("%1:%2").arg(user).arg(password).toLatin1()).toBase64());
 
     reply = manager.get(request);
@@ -115,7 +115,7 @@ QMap<QString, QMap<QString, QJsonObject>> getCommentsByPost(QJsonArray comments,
         QNetworkReply* reply;
 
         extern QString gDomain, gUser, gPassword;
-        request.setUrl(QUrl("http://" + gDomain + "/wp-json/wp/v2/posts/" + QString::number(postId)));
+        request.setUrl(QUrl("https://" + gDomain + "/wp-json/wp/v2/posts/" + QString::number(postId)));
         request.setRawHeader("Authorization", "Basic " + QByteArray(QString("%1:%2").arg(gUser).arg(gPassword).toLatin1()).toBase64());
 
         reply = manager.get(request);

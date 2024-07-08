@@ -90,7 +90,7 @@ void MainWindow::on_pushButton_1_clicked()
     QNetworkRequest request;
     QNetworkReply* reply;
 
-    request.setUrl(QUrl("http://" + gDomain + "/wp-json/wp/v2/comments/" + QString::number(gCommentsByPost[gPostTitle][gCommentTitle].value("id").toInt())));
+    request.setUrl(QUrl("https://" + gDomain + "/wp-json/wp/v2/comments/" + QString::number(gCommentsByPost[gPostTitle][gCommentTitle].value("id").toInt())));
     request.setRawHeader("Authorization", "Basic " + QByteArray(QString("%1:%2").arg(gUser).arg(gPassword).toLatin1()).toBase64());
 
     QJsonObject data;
@@ -156,7 +156,7 @@ void MainWindow::on_pushButton_4_clicked()
     QNetworkRequest request;
     QNetworkReply* reply;
 
-    request.setUrl(QUrl("http://" + gDomain + "/wp-json/wp/v2/comments/" + QString::number(gCommentsByPost[gPostTitle][gCommentTitle].value("id").toInt())));
+    request.setUrl(QUrl("https://" + gDomain + "/wp-json/wp/v2/comments/" + QString::number(gCommentsByPost[gPostTitle][gCommentTitle].value("id").toInt())));
     request.setRawHeader("Authorization", "Basic " + QByteArray(QString("%1:%2").arg(gUser).arg(gPassword).toLatin1()).toBase64());
 
     QJsonObject data;
@@ -191,7 +191,7 @@ void MainWindow::on_pushButton_5_clicked()
     QNetworkRequest request;
     QNetworkReply* reply;
 
-    request.setUrl(QUrl("http://" + gDomain + "/wp-json/wp/v2/comments/" + QString::number(gCommentsByPost[gPostTitle][gCommentTitle].value("id").toInt())));
+    request.setUrl(QUrl("https://" + gDomain + "/wp-json/wp/v2/comments/" + QString::number(gCommentsByPost[gPostTitle][gCommentTitle].value("id").toInt())));
     request.setRawHeader("Authorization", "Basic " + QByteArray(QString("%1:%2").arg(gUser).arg(gPassword).toLatin1()).toBase64());
 
     QJsonObject data;
@@ -264,7 +264,7 @@ QJsonArray MainWindow::getComments(QString domain, QString user, QString passwor
     QNetworkRequest request;
     QNetworkReply* reply;
 
-    request.setUrl(QUrl("http://" + domain + "/wp-json/wp/v2/comments?status=hold&per_page=100"));
+    request.setUrl(QUrl("https://" + domain + "/wp-json/wp/v2/comments?status=hold&per_page=100"));
     request.setRawHeader("Authorization", "Basic " + QByteArray(QString("%1:%2").arg(user).arg(password).toLatin1()).toBase64());
 
     reply = manager.get(request);
@@ -301,7 +301,7 @@ QMap<QString, QMap<QString, QJsonObject>> MainWindow::getCommentsByPost(QJsonArr
         QNetworkReply* reply;
 
         extern QString gDomain, gUser, gPassword;
-        request.setUrl(QUrl("http://" + gDomain + "/wp-json/wp/v2/posts/" + QString::number(postId)));
+        request.setUrl(QUrl("https://" + gDomain + "/wp-json/wp/v2/posts/" + QString::number(postId)));
         request.setRawHeader("Authorization", "Basic " + QByteArray(QString("%1:%2").arg(gUser).arg(gPassword).toLatin1()).toBase64());
 
         reply = manager.get(request);

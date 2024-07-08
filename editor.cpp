@@ -29,7 +29,7 @@ void Editor::on_pushButton_1_clicked()
 
     QString content = ui->plainTextEdit->toPlainText();
 
-    request.setUrl(QUrl("http://" + gDomain + "/wp-json/wp/v2/comments/" + QString::number(_comment->value("id").toInt())));
+    request.setUrl(QUrl("https://" + gDomain + "/wp-json/wp/v2/comments/" + QString::number(_comment->value("id").toInt())));
     request.setRawHeader("Authorization", "Basic " + QByteArray(QString("%1:%2").arg(gUser).arg(gPassword).toLatin1()).toBase64());
 
     QJsonObject data;

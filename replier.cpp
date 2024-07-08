@@ -48,7 +48,7 @@ bool Replier::approve()
     QNetworkRequest request;
     QNetworkReply* reply;
 
-    request.setUrl(QUrl("http://" + gDomain + "/wp-json/wp/v2/comments/" + QString::number(_comment->value("id").toInt())));
+    request.setUrl(QUrl("https://" + gDomain + "/wp-json/wp/v2/comments/" + QString::number(_comment->value("id").toInt())));
     request.setRawHeader("Authorization", "Basic " + QByteArray(QString("%1:%2").arg(gUser).arg(gPassword).toLatin1()).toBase64());
 
     QJsonObject data;
@@ -79,7 +79,7 @@ QJsonObject Replier::getMe()
     QNetworkRequest request;
     QNetworkReply* reply;
 
-    request.setUrl(QUrl("http://" + gDomain + "/wp-json/wp/v2/users/me"));
+    request.setUrl(QUrl("https://" + gDomain + "/wp-json/wp/v2/users/me"));
     request.setRawHeader("Authorization", "Basic " + QByteArray(QString("%1:%2").arg(gUser).arg(gPassword).toLatin1()).toBase64());
 
     reply = manager.get(request);
@@ -112,7 +112,7 @@ bool Replier::sendreply(QJsonObject me)
     QNetworkRequest request;
     QNetworkReply* reply;
 
-    request.setUrl(QUrl("http://" + gDomain + "/wp-json/wp/v2/comments"));
+    request.setUrl(QUrl("https://" + gDomain + "/wp-json/wp/v2/comments"));
     request.setRawHeader("Authorization", "Basic " + QByteArray(QString("%1:%2").arg(gUser).arg(gPassword).toLatin1()).toBase64());
 
     QJsonObject data;

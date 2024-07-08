@@ -4,6 +4,9 @@
 #include <QDialog>
 #include <QLineEdit>
 #include <QPushButton>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QMessageBox>
 #include <QSettings>
 
 namespace Ui {

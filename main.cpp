@@ -83,15 +83,15 @@ QJsonArray getComments(QString domain, QString user, QString password, MainWindo
 
     reply = manager.get(request);
 
+    QEventLoop loop;
+    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    loop.exec();
+
     if (reply->error() != QNetworkReply::NoError) {
         QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("Failed to read comments"));
         qDebug() << reply->errorString();
         return QJsonArray();
     }
-
-    QEventLoop loop;
-    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-    loop.exec();
 
     QByteArray data = reply->readAll();
     QJsonDocument doc = QJsonDocument::fromJson(data);
@@ -120,15 +120,15 @@ QMap<QString, QMap<QString, QJsonObject>> getCommentsByPost(QJsonArray comments,
 
         reply = manager.get(request);
 
+        QEventLoop loop;
+        QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+        loop.exec();
+
         if (reply->error() != QNetworkReply::NoError) {
             QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("Failed to read post title"));
             qDebug() << reply->errorString();
             return QMap<QString, QMap<QString, QJsonObject>>();
         }
-
-        QEventLoop loop;
-        QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-        loop.exec();
 
         QByteArray data = reply->readAll();
         QJsonDocument doc = QJsonDocument::fromJson(data);

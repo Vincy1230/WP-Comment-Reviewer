@@ -151,25 +151,26 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../editor.cpp" line="43"/>
+        <location filename="../editor.cpp" line="48"/>
+        <location filename="../login.cpp" line="74"/>
         <location filename="../main.cpp" line="61"/>
-        <location filename="../main.cpp" line="87"/>
-        <location filename="../main.cpp" line="124"/>
-        <location filename="../mainwindow.cpp" line="104"/>
-        <location filename="../mainwindow.cpp" line="120"/>
-        <location filename="../mainwindow.cpp" line="170"/>
-        <location filename="../mainwindow.cpp" line="205"/>
-        <location filename="../mainwindow.cpp" line="239"/>
-        <location filename="../mainwindow.cpp" line="273"/>
-        <location filename="../mainwindow.cpp" line="310"/>
-        <location filename="../replier.cpp" line="62"/>
-        <location filename="../replier.cpp" line="88"/>
-        <location filename="../replier.cpp" line="133"/>
+        <location filename="../main.cpp" line="91"/>
+        <location filename="../main.cpp" line="128"/>
+        <location filename="../mainwindow.cpp" line="109"/>
+        <location filename="../mainwindow.cpp" line="121"/>
+        <location filename="../mainwindow.cpp" line="176"/>
+        <location filename="../mainwindow.cpp" line="212"/>
+        <location filename="../mainwindow.cpp" line="242"/>
+        <location filename="../mainwindow.cpp" line="280"/>
+        <location filename="../mainwindow.cpp" line="317"/>
+        <location filename="../replier.cpp" line="67"/>
+        <location filename="../replier.cpp" line="93"/>
+        <location filename="../replier.cpp" line="139"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../editor.cpp" line="43"/>
+        <location filename="../editor.cpp" line="48"/>
         <source>Edit Failed</source>
         <translation>编辑失败</translation>
     </message>
@@ -184,8 +185,8 @@
         <translation>[ 正在读取评论 ]</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
-        <location filename="../mainwindow.cpp" line="273"/>
+        <location filename="../main.cpp" line="91"/>
+        <location filename="../mainwindow.cpp" line="280"/>
         <source>Failed to read comments</source>
         <translation>读取评论失败</translation>
     </message>
@@ -195,8 +196,8 @@
         <translation>[ 正在读取文章标题 ]</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="124"/>
-        <location filename="../mainwindow.cpp" line="310"/>
+        <location filename="../main.cpp" line="128"/>
+        <location filename="../mainwindow.cpp" line="317"/>
         <source>Failed to read post title</source>
         <translation>读取文章标题失败</translation>
     </message>
@@ -207,47 +208,52 @@
     </message>
     <message>
         <location filename="../main.cpp" line="149"/>
-        <location filename="../mainwindow.cpp" line="335"/>
+        <location filename="../mainwindow.cpp" line="338"/>
         <source>[ Loading complete ]</source>
         <translation>[ 加载完成 ]</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="104"/>
-        <location filename="../replier.cpp" line="62"/>
+        <location filename="../mainwindow.cpp" line="109"/>
+        <location filename="../replier.cpp" line="67"/>
         <source>Approval Failed</source>
         <translation>批准评论失败</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="120"/>
+        <location filename="../mainwindow.cpp" line="121"/>
         <source>Posting replies requires logging in with email address</source>
         <translation>发表回复需要以邮箱登录</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="170"/>
-        <location filename="../mainwindow.cpp" line="205"/>
+        <location filename="../mainwindow.cpp" line="176"/>
+        <location filename="../mainwindow.cpp" line="212"/>
         <source>Deletion Failed</source>
         <translation>删除失败</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="234"/>
-        <location filename="../mainwindow.cpp" line="262"/>
+        <location filename="../mainwindow.cpp" line="237"/>
+        <location filename="../mainwindow.cpp" line="265"/>
         <source>[ Refreshing... ]</source>
         <translation>[ 正在刷新 ]</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="239"/>
+        <location filename="../mainwindow.cpp" line="242"/>
         <source>All comments have been approved</source>
         <translation>所有评论均已审完</translation>
     </message>
     <message>
-        <location filename="../replier.cpp" line="88"/>
+        <location filename="../replier.cpp" line="93"/>
         <source>Failed to read user information</source>
         <translation>用户信息加载失败</translation>
     </message>
     <message>
-        <location filename="../replier.cpp" line="133"/>
+        <location filename="../replier.cpp" line="139"/>
         <source>Failed to send reply</source>
         <translation>回复发送失败</translation>
+    </message>
+    <message>
+        <location filename="../login.cpp" line="74"/>
+        <source>Login failed: Please use administrator account and application password</source>
+        <translation>登录失败：请使用管理员帐户和应用程序密码</translation>
     </message>
 </context>
 <context>

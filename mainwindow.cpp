@@ -98,17 +98,18 @@ void MainWindow::on_pushButton_1_clicked()
     QJsonDocument doc(data);
     QByteArray body = doc.toJson();
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
     reply = manager.post(request, body);
+
+    QEventLoop loop;
+    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    loop.exec();
 
     if (reply->error() != QNetworkReply::NoError) {
         QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("Approval Failed"));
         qDebug() << reply->errorString();
         return;
     }
-
-    QEventLoop loop;
-    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-    loop.exec();
 
     reset();
 }
@@ -164,17 +165,18 @@ void MainWindow::on_pushButton_4_clicked()
     QJsonDocument doc(data);
     QByteArray body = doc.toJson();
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
     reply = manager.post(request, body);
+
+    QEventLoop loop;
+    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    loop.exec();
 
     if (reply->error() != QNetworkReply::NoError) {
         QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("Deletion Failed"));
         qDebug() << reply->errorString();
         return;
     }
-
-    QEventLoop loop;
-    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-    loop.exec();
 
     reset();
 }
@@ -199,17 +201,18 @@ void MainWindow::on_pushButton_5_clicked()
     QJsonDocument doc(data);
     QByteArray body = doc.toJson();
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
     reply = manager.post(request, body);
+
+    QEventLoop loop;
+    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    loop.exec();
 
     if (reply->error() != QNetworkReply::NoError) {
         QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("Deletion Failed"));
         qDebug() << reply->errorString();
         return;
     }
-
-    QEventLoop loop;
-    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-    loop.exec();
 
     reset();
 }
@@ -269,15 +272,15 @@ QJsonArray MainWindow::getComments(QString domain, QString user, QString passwor
 
     reply = manager.get(request);
 
+    QEventLoop loop;
+    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    loop.exec();
+
     if (reply->error() != QNetworkReply::NoError) {
         QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("Failed to read comments"));
         qDebug() << reply->errorString();
         return QJsonArray();
     }
-
-    QEventLoop loop;
-    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-    loop.exec();
 
     QByteArray data = reply->readAll();
     QJsonDocument doc = QJsonDocument::fromJson(data);
@@ -306,15 +309,15 @@ QMap<QString, QMap<QString, QJsonObject>> MainWindow::getCommentsByPost(QJsonArr
 
         reply = manager.get(request);
 
+        QEventLoop loop;
+        QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+        loop.exec();
+
         if (reply->error() != QNetworkReply::NoError) {
             QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("Failed to read post title"));
             qDebug() << reply->errorString();
             return QMap<QString, QMap<QString, QJsonObject>>();
         }
-
-        QEventLoop loop;
-        QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-        loop.exec();
 
         QByteArray data = reply->readAll();
         QJsonDocument doc = QJsonDocument::fromJson(data);

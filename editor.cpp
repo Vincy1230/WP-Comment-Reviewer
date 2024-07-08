@@ -37,17 +37,18 @@ void Editor::on_pushButton_1_clicked()
     QJsonDocument doc(data);
     QByteArray body = doc.toJson();
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
     reply = manager.post(request, body);
+
+    QEventLoop loop;
+    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    loop.exec();
 
     if (reply->error() != QNetworkReply::NoError) {
         QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("Edit Failed"));
         qDebug() << reply->errorString();
         return;
     }
-
-    QEventLoop loop;
-    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-    loop.exec();
 
     QString newCommentTitle = QString::number(_comment->value("id").toInt()) + " - " + _comment->value("author_name").toString() + " - " + content.simplified();
     gCommentTitle = newCommentTitle.length() > 50 ? newCommentTitle.left(50) : newCommentTitle;

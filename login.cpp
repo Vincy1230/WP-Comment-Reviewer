@@ -57,6 +57,24 @@ void Login::on_lineEdit_3_textChanged(const QString& password)
 
 void Login::on_pushButton_1_clicked()
 {
+    QNetworkAccessManager manager;
+    QNetworkRequest request;
+    QNetworkReply* reply;
+
+    request.setUrl(QUrl("https://" + _domain + "/wp-json/wp/v2/settings"));
+    request.setRawHeader("Authorization", "Basic " + QByteArray(QString("%1:%2").arg(_user).arg(_password).toLatin1()).toBase64());
+
+    reply = manager.get(request);
+    
+    QEventLoop loop;
+    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    loop.exec();
+
+    if (reply->error() != QNetworkReply::NoError) {
+        QMessageBox::critical(this, QObject::tr("Error"), QObject::tr("Login failed: Please use administrator account and application password"));
+        return;
+    }
+
     if (ui->checkBox->isChecked()) {
         _settings.setValue("domain", _domain);
         _settings.setValue("user", _user);

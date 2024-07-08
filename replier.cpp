@@ -56,17 +56,18 @@ bool Replier::approve()
     QJsonDocument doc(data);
     QByteArray body = doc.toJson();
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
     reply = manager.post(request, body);
+
+    QEventLoop loop;
+    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    loop.exec();
 
     if (reply->error() != QNetworkReply::NoError) {
         QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("Approval Failed"));
         qDebug() << reply->errorString();
         return false;
     }
-
-    QEventLoop loop;
-    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-    loop.exec();
 
     return true;
 }
@@ -84,15 +85,15 @@ QJsonObject Replier::getMe()
 
     reply = manager.get(request);
 
+    QEventLoop loop;
+    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    loop.exec();
+
     if (reply->error() != QNetworkReply::NoError) {
         QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("Failed to read user information"));
         qDebug() << reply->errorString();
         return QJsonObject();
     }
-
-    QEventLoop loop;
-    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-    loop.exec();
 
     QByteArray data = reply->readAll();
     QJsonDocument doc = QJsonDocument::fromJson(data);
@@ -127,17 +128,18 @@ bool Replier::sendreply(QJsonObject me)
     QJsonDocument doc(data);
     QByteArray body = doc.toJson();
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
     reply = manager.post(request, body);
+
+    QEventLoop loop;
+    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    loop.exec();
 
     if (reply->error() != QNetworkReply::NoError) {
         QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("Failed to send reply"));
         qDebug() << reply->errorString();
         return false;
     }
-
-    QEventLoop loop;
-    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-    loop.exec();
 
     return true;
 }

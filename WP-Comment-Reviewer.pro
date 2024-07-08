@@ -31,9 +31,9 @@ FORMS += \
     replier.ui
 
 TRANSLATIONS = \
-        languages/th_TH.ts \
-        languages/zh_CN.ts \
-        languages/zh_TW.ts
+        i18n/th_TH.ts \
+        i18n/zh_CN.ts \
+        i18n/zh_TW.ts
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

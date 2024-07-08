@@ -16,7 +16,7 @@ Login::Login(QWidget* parent)
         ui->lineEdit_2->setText(_settings.value("user").toString());
     }
     if (_settings.contains("password")) {
-        ui->lineEdit_3->setText(_settings.value("password").toString());
+        ui->lineEdit_3->setText(QByteArray::fromBase64(_settings.value("password").toByteArray()));
     }
     _domain = ui->lineEdit_1->text();
     _user = ui->lineEdit_2->text();
@@ -60,6 +60,7 @@ void Login::on_pushButton_1_clicked()
     if (ui->checkBox->isChecked()) {
         _settings.setValue("domain", _domain);
         _settings.setValue("user", _user);
+        _settings.setValue("password", _password.toUtf8().toBase64().toStdString().c_str());
     } else {
         _settings.remove("domain");
         _settings.remove("user");

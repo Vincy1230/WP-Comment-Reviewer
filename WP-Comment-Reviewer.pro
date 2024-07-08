@@ -1,4 +1,6 @@
 QT       += core gui network
+TEMPLATE = app
+RC_ICONS = "icon/favicon.ico"
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 

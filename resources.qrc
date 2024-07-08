@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/avatar-144.png</file>
+        <file>icon/favicon.ico</file>
+        <file>i18n/zh_CN.qm</file>
+        <file>i18n/zh_TW.qm</file>
+        <file>i18n/th_TH.qm</file>
+    </qresource>
+</RCC>

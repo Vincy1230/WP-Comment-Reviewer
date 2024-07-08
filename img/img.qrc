@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/img">
-        <file>avatar-144.png</file>
-    </qresource>
-    <qresource prefix="/icon">
-        <file>favicon.ico</file>
-    </qresource>
-</RCC>

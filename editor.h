@@ -1,22 +1,35 @@
-#ifndef EDITOR_H
-#define EDITOR_H
+#ifndef EDITER_H
+#define EDITER_H
 
+#include <QDebug>
 #include <QDialog>
+#include <QEventLoop>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QMessageBox>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QObject>
 
 namespace Ui {
 class Editor;
 }
 
-class Editor : public QDialog
-{
+class Editor : public QDialog {
     Q_OBJECT
 
 public:
-    explicit Editor(QWidget *parent = nullptr);
+    explicit Editor(QWidget* parent = nullptr);
     ~Editor();
 
+private slots:
+    void on_pushButton_1_clicked();
+    void on_pushButton_2_clicked();
+
 private:
-    Ui::Editor *ui;
+    Ui::Editor* ui;
+    QJsonObject* _comment;
 };
 
-#endif // EDITOR_H
+#endif // EDITER_H

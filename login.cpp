@@ -8,7 +8,7 @@ Login::Login(QWidget* parent)
     , _settings("./user.ini", QSettings::IniFormat)
 {
     ui->setupUi(this);
-    _settings.beginGroup("User");
+    _settings.beginGroup("WordPress");
     if (_settings.contains("domain")) {
         ui->lineEdit_1->setText(_settings.value("domain").toString());
     }

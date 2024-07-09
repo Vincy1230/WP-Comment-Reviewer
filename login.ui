@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>480</width>
-    <height>100</height>
+    <height>119</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,7 +27,7 @@
    <item row="2" column="0">
     <widget class="QLabel" name="label_3">
      <property name="text">
-      <string>Admin Password</string>
+      <string>Application Password</string>
      </property>
     </widget>
    </item>
@@ -50,21 +50,21 @@
       <enum>QLineEdit::Password</enum>
      </property>
      <property name="placeholderText">
-      <string notr="true">&lt;your_password&gt;</string>
+      <string>&lt;create_on_your_profile_page&gt;</string>
      </property>
     </widget>
    </item>
    <item row="0" column="0">
     <widget class="QLabel" name="label_1">
      <property name="text">
-      <string>WP Domain</string>
+      <string>WordPress Domain</string>
      </property>
     </widget>
    </item>
    <item row="1" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Login Email</string>
+      <string>Administrator Email</string>
      </property>
     </widget>
    </item>

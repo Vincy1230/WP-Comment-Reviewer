@@ -65,9 +65,8 @@
         <translation>เข้าสู่ระบบ</translation>
     </message>
     <message>
-        <location filename="../login.ui" line="30"/>
         <source>Admin Password</source>
-        <translation>รหัสผ่านผู้ดูแลระบบ</translation>
+        <translation type="vanished">รหัสผ่านผู้ดูแลระบบ</translation>
     </message>
     <message>
         <location filename="../login.ui" line="40"/>
@@ -75,14 +74,32 @@
         <translation>ยืนยัน</translation>
     </message>
     <message>
-        <location filename="../login.ui" line="60"/>
         <source>WP Domain</source>
-        <translation>โดเมน WP</translation>
+        <translation type="vanished">โดเมน WP</translation>
+    </message>
+    <message>
+        <source>Login Email</source>
+        <translation type="vanished">อีเมลเข้าสู่ระบบ</translation>
+    </message>
+    <message>
+        <location filename="../login.ui" line="30"/>
+        <source>Application Password</source>
+        <translation>รหัสผ่านแอปพลิเคชัน</translation>
+    </message>
+    <message>
+        <location filename="../login.ui" line="53"/>
+        <source>&lt;create_on_your_profile_page&gt;</source>
+        <translation>&lt;สร้างบนหน้าโปรไฟล์ของคุณ&gt;</translation>
+    </message>
+    <message>
+        <location filename="../login.ui" line="60"/>
+        <source>WordPress Domain</source>
+        <translation>โดเมน WordPress</translation>
     </message>
     <message>
         <location filename="../login.ui" line="67"/>
-        <source>Login Email</source>
-        <translation>อีเมลเข้าสู่ระบบ</translation>
+        <source>Administrator Email</source>
+        <translation>อีเมลผู้ดูแลระบบ</translation>
     </message>
     <message>
         <location filename="../login.ui" line="81"/>

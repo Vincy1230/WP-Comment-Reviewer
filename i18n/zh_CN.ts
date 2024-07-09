@@ -65,9 +65,8 @@
         <translation>登录</translation>
     </message>
     <message>
-        <location filename="../login.ui" line="30"/>
         <source>Admin Password</source>
-        <translation>管理员密码</translation>
+        <translation type="vanished">管理员密码</translation>
     </message>
     <message>
         <location filename="../login.ui" line="40"/>
@@ -75,14 +74,32 @@
         <translation>确认登录</translation>
     </message>
     <message>
-        <location filename="../login.ui" line="60"/>
         <source>WP Domain</source>
+        <translation type="vanished">WordPress 域名</translation>
+    </message>
+    <message>
+        <source>Login Email</source>
+        <translation type="vanished">登录邮箱</translation>
+    </message>
+    <message>
+        <location filename="../login.ui" line="30"/>
+        <source>Application Password</source>
+        <translation>应用程序密码</translation>
+    </message>
+    <message>
+        <location filename="../login.ui" line="53"/>
+        <source>&lt;create_on_your_profile_page&gt;</source>
+        <translation>&lt;在个人资料页创建&gt;</translation>
+    </message>
+    <message>
+        <location filename="../login.ui" line="60"/>
+        <source>WordPress Domain</source>
         <translation>WordPress 域名</translation>
     </message>
     <message>
         <location filename="../login.ui" line="67"/>
-        <source>Login Email</source>
-        <translation>登录邮箱</translation>
+        <source>Administrator Email</source>
+        <translation>管理员邮箱</translation>
     </message>
     <message>
         <location filename="../login.ui" line="81"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh_CN">
+<TS version="2.1" language="zh_TW">
 <context>
     <name>About</name>
     <message>
@@ -65,9 +65,8 @@
         <translation>登入</translation>
     </message>
     <message>
-        <location filename="../login.ui" line="30"/>
         <source>Admin Password</source>
-        <translation>管理員密碼</translation>
+        <translation type="vanished">管理員密碼</translation>
     </message>
     <message>
         <location filename="../login.ui" line="40"/>
@@ -75,14 +74,32 @@
         <translation>確認登入</translation>
     </message>
     <message>
-        <location filename="../login.ui" line="60"/>
         <source>WP Domain</source>
+        <translation type="vanished">WordPress 網域</translation>
+    </message>
+    <message>
+        <source>Login Email</source>
+        <translation type="vanished">登入電子郵件</translation>
+    </message>
+    <message>
+        <location filename="../login.ui" line="30"/>
+        <source>Application Password</source>
+        <translation>應用程式密碼</translation>
+    </message>
+    <message>
+        <location filename="../login.ui" line="53"/>
+        <source>&lt;create_on_your_profile_page&gt;</source>
+        <translation>&lt;在個人資料頁創建&gt;</translation>
+    </message>
+    <message>
+        <location filename="../login.ui" line="60"/>
+        <source>WordPress Domain</source>
         <translation>WordPress 網域</translation>
     </message>
     <message>
         <location filename="../login.ui" line="67"/>
-        <source>Login Email</source>
-        <translation>登入電子郵件</translation>
+        <source>Administrator Email</source>
+        <translation>管理員電子郵件</translation>
     </message>
     <message>
         <location filename="../login.ui" line="81"/>

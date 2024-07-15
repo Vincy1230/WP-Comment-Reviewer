@@ -2,7 +2,8 @@
 
 > Author: [Vincy SHI](https://blog.vincy1230.net/)  
 > Version: 0.1  
-> Support Language: English | 简体中文 | 繁體中文 | ไทย (Automatically detects system language)
+> Support Language: English | 简体中文 | 繁體中文 | ไทย (Automatically detects system language)  
+> Beta version exe: [Download here](https://github.com/Vincy1230/WP-Comment-Reviewer/releases/download/0.1-Beta/WP-Comment-Reviewer.exe)
 
 This application is a remote comment reviewer for WordPress based on Qt. With this application, users can handle pending comments without going to the WordPress backend. This application interacts directly with the WordPress core through the WordPress REST API, without loading complex web files, helping small-scale source site owners to handle new comments conveniently and quickly anytime, anywhere.
 
@@ -18,9 +19,9 @@ Therefore, I developed a Qt-based WordPress pending comment manager for high-fre
 
 1.  Go to WordPress Dashboard -> Users -> Profile -> Application Passwords, and generate a new application password.
 2.  Run this application and fill in the login page:
-    -   WordPress domain: Enter the domain of your WordPress backend.
-    -   Administrator email: Enter the email of your administrator account.
-    -   Application password: Enter the application password you just generated (note this is not the backend login password).
+    -   WordPress Domain: Enter the domain of your WordPress backend.
+    -   Administrator Email: Enter the email of your administrator account.
+    -   Application Password: Enter the application password you just generated (note this is not the backend login password).
 3.  After logging in, the operations are roughly the same as the pending comment operations in the WordPress backend.
 
 ## FAQs
@@ -55,7 +56,7 @@ The email account is a required field for WordPress comments. Therefore, if you 
 
 For security, WordPress only allows external login using application passwords under valid https connections. If you indeed cannot use https or obtain application passwords, you can bypass this restriction by installing the JSON Basic Authentication plugin.
 
-**It is highly discouraged to use this method to log in, especially if both conditions cannot be met. You should prioritize fixing your site to comply with WordPress restrictions—otherwise, your password may be exposed in plaintext on the internet. Do not use in production environments!**
+**It is highly discouraged to use this method to log in, especially if both conditions cannot be met. You should prioritize fixing your site to comply with WordPress restrictions, otherwise your password may be exposed in plaintext on the internet. Do not use in production environments!**
 
 1.  Visit the plugin homepage [Github@WP-API/Basic-Auth](https://github.com/WP-API/Basic-Auth) to download the plugin source code.
 2.  Manually add the source code to your site's plugin directory (usually located at `/wp-content/plugins`).

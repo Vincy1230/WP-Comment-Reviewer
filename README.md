@@ -3,7 +3,7 @@
 > Author: [Vincy SHI](https://blog.vincy1230.net/)  
 > Version: 0.1  
 > Support Language: English | 简体中文 | 繁體中文 | ไทย (Automatically detects system language)  
-> Beta version exe: [Download here](https://github.com/Vincy1230/WP-Comment-Reviewer/releases/download/0.1-Beta/WP-Comment-Reviewer.exe)
+> Beta version exe: [x64](https://github.com/Vincy1230/WP-Comment-Reviewer/releases/download/0.1-Beta.2/Boxed_Qt_6_6_3_MSVC2019_64bit.exe) | [x86_32](https://github.com/Vincy1230/WP-Comment-Reviewer/releases/download/0.1-Beta.2/Boxed_Qt_5_15_17_MSVC2019_32bit.exe) | [Releases](https://github.com/Vincy1230/WP-Comment-Reviewer/releases/tag/0.1-Beta.2)
 
 This application is a remote comment reviewer for WordPress based on Qt. With this application, users can handle pending comments without going to the WordPress backend. This application interacts directly with the WordPress core through the WordPress REST API, without loading complex web files, helping small-scale source site owners to handle new comments conveniently and quickly anytime, anywhere.
 

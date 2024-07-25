@@ -4,7 +4,6 @@
 #include <QDebug>
 #include <QDialog>
 #include <QEventLoop>
-#include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QMessageBox>

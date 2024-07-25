@@ -4,13 +4,11 @@
 #include <QDebug>
 #include <QDialog>
 #include <QEventLoop>
-#include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QMessageBox>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
-#include <QObject>
 
 namespace Ui {
 class Editor;

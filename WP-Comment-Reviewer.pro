@@ -1,6 +1,10 @@
 QT       += core gui network
 TEMPLATE = app
 RC_ICONS = "icon/favicon.ico"
+VERSION = 0.1.2
+QMAKE_TARGET_COPYRIGHT = "Copyright (c) 2024 Vincy SHI | 史云昔"
+QMAKE_TARGET_PRODUCT = "WP Comment Reviewer"
+RC_LANG = 0x0800
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 

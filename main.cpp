@@ -22,9 +22,7 @@ QMap<QString, QMap<QString, QJsonObject>> getCommentsByPost(QJsonArray comments,
 
 int main(int argc, char* argv[])
 {
-    // 主程序入口
     QApplication a(argc, argv);
-
     QTranslator translator;
     QLocale locale;
     qApp->installTranslator(&translator);
@@ -52,10 +50,9 @@ int main(int argc, char* argv[])
 
     w.show();
 
-    // 登录窗口
     Login login(&w);
     if (login.exec() == QDialog::Rejected) {
-        return 0; // 如果登录窗口被拒绝，结束程序
+        return 0;
     }
 
     extern QString gDomain, gUser, gPassword;
@@ -105,13 +102,11 @@ QJsonArray getComments(QString domain, QString user, QString password, MainWindo
 QMap<QString, QMap<QString, QJsonObject>> getCommentsByPost(QJsonArray comments, MainWindow* w)
 {
     w->set_placeholder(QString(QObject::tr("[ Reading post title... ]")));
-    // 遍历评论，列举出现的所有文章ID并去重
     QSet<int> postIds;
     for (int i = 0; i < comments.size(); i++) {
         postIds.insert(comments.at(i).toObject().value("post").toInt());
     }
 
-    // 建立文章ID和到文章标题的映射，查 /wp-json/wp/v2/posts/{id} 获取文章，标题在json中的title字段中的rendered字段中
     QMap<int, QString> postName;
     for (int postId : postIds) {
         QNetworkAccessManager manager;
@@ -141,7 +136,6 @@ QMap<QString, QMap<QString, QJsonObject>> getCommentsByPost(QJsonArray comments,
         w->set_placeholder(QString(QObject::tr("[ Identified post ")) + title + QString(" ]"));
     }
 
-    // 评论按文章标题分类
     QMap<QString, QMap<QString, QJsonObject>> commentsByPost;
     for (int i = 0; i < comments.size(); i++) {
         QJsonObject comment = comments.at(i).toObject();

@@ -1,7 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QComboBox>
 #include <QDebug>
 #include <QEventLoop>
 #include <QJsonArray>
@@ -13,7 +12,6 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QObject>
-#include <QPushButton>
 
 namespace Ui {
 class MainWindow;

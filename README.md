@@ -52,6 +52,12 @@ Not using https connection:
 
 The email account is a required field for WordPress comments. Therefore, if you did not use the administrator's email when logging into this program and used other valid login credentials (e.g., account ID), you will not be able to post replies, but other functions are unaffected.
 
+### qt.network.monitor
+
+Warning: `qt.network.monitor: Could not get the INetworkConnection instance for the adapter GUID.`
+
+It may have been caused by the use of a proxy.
+
 ## Modify Login Method
 
 For security, WordPress only allows external login using application passwords under valid https connections. If you indeed cannot use https or obtain application passwords, you can bypass this restriction by installing the JSON Basic Authentication plugin.

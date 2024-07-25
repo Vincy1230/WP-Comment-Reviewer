@@ -28,7 +28,11 @@ int main(int argc, char* argv[])
     QTranslator translator;
     QLocale locale;
     qApp->installTranslator(&translator);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     if (locale.language() == QLocale::Chinese && (locale.territory() == QLocale::China || locale.territory() == QLocale::Singapore)) {
+#else
+    if (locale.language() == QLocale::Chinese && (locale.country() == QLocale::China || locale.country() == QLocale::Singapore)) {
+#endif
         if (!translator.load(":/i18n/zh_CN.qm")) {
             qApp->removeTranslator(&translator);
         }
